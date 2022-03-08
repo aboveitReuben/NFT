@@ -10,7 +10,7 @@ contract Web3TestContract is ERC721URIStorage, Ownable {
     using Strings for string;
     using Counters for Counters.Counter;
 
-    string public baseURI;
+    string private _baseTokenURI;
     Counters.Counter private _tokenIds;
     uint256 public MAX_SUPPLY = 10000;
     uint256 public maxMint = 5;
@@ -18,10 +18,18 @@ contract Web3TestContract is ERC721URIStorage, Ownable {
 
     constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {}
 
-    function setBaseURI(string memory _baseURI) public onlyOwner{
-        baseURI = _baseURI;
-    }
+
     
+    // metadata URI
+    function _baseURI() internal view virtual override returns (string memory) {
+        return _baseTokenURI;
+    }
+
+    function setBaseURI(string calldata baseURI) external onlyOwner {
+        _baseTokenURI = baseURI;
+    }
+
+    // Mint
     function mint(string memory tokenURI)
         public
         returns (uint256)
@@ -35,6 +43,8 @@ contract Web3TestContract is ERC721URIStorage, Ownable {
 
         return newItemId;
     }
+
+    //reveal
     function setReavealed(bool _revealed) 
     public 
     onlyOwner
