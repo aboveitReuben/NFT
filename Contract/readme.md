@@ -1,3 +1,4 @@
+## INSTALL ##
 
 - install ganache (https://trufflesuite.com/ganache/index.html)
 - install node LST (nodejs.org)
@@ -10,7 +11,7 @@
 
 - run npm install
 
-# RUN # 
+## RUN ## 
 - truffle migrate --network development
 - truffle deploy
 - ganache-cli
