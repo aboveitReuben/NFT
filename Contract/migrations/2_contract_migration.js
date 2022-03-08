@@ -1,5 +1,5 @@
-const Web3TestContract = artifacts.require("Web3TestContract");
+const TheGangoSolGang = artifacts.require("TheGangoSolGang");
 
 module.exports = function (deployer) {
-  deployer.deploy(Web3TestContract, "TestContract", "Web3TestContract");
+  deployer.deploy(TheGangoSolGang, "TheGangoSolGang", "TheGangoSolGang");
 };
