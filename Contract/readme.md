@@ -1,5 +1,7 @@
 ## INSTALL ##
 
+
+- create a metamask wallet
 - install ganache (https://trufflesuite.com/ganache/index.html)
 - install node LST (nodejs.org)
 
